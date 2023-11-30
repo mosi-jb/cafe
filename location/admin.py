@@ -25,3 +25,6 @@ class ProductAdmin(admin.ModelAdmin):
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('title',)
     prepopulated_fields = {"slug": ("title",)}
+
+
+admin.site.register(LocationImage)
