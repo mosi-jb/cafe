@@ -27,6 +27,8 @@ admin_urls = [
          include(('media.urls.admin', 'cafe.media'), namespace='media-admin')),
     path('admin/location/',
          include(('location.urls.admin', 'cafe.location'), namespace='location-admin')),
+    path('admin/menu/',
+         include(('menu.urls.admin', 'cafe.menu'), namespace='menu-admin')),
 
 ]
 
@@ -37,6 +39,8 @@ front_urls = [
          include(('media.urls.front', 'cafe.media'), namespace='media-front')),
     path('front/location/',
          include(('location.urls.front', 'cafe.location'), namespace='location-front')),
+    path('front/menu/',
+         include(('menu.urls.front', 'cafe.menu'), namespace='menu-front')),
 
 ]
 
