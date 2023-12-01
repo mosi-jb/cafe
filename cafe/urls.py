@@ -29,6 +29,8 @@ admin_urls = [
          include(('location.urls.admin', 'cafe.location'), namespace='location-admin')),
     path('admin/menu/',
          include(('menu.urls.admin', 'cafe.menu'), namespace='menu-admin')),
+    path('admin/inventory/',
+         include(('inventory.urls.admin', 'cafe.inventory'), namespace='inventory-admin')),
 
 ]
 
@@ -41,6 +43,8 @@ front_urls = [
          include(('location.urls.front', 'cafe.location'), namespace='location-front')),
     path('front/menu/',
          include(('menu.urls.front', 'cafe.menu'), namespace='menu-front')),
+    path('front/inventory/',
+         include(('inventory.urls.front', 'cafe.inventory'), namespace='inventory-front')),
 
 ]
 
