@@ -31,6 +31,8 @@ admin_urls = [
          include(('menu.urls.admin', 'cafe.menu'), namespace='menu-admin')),
     path('admin/inventory/',
          include(('inventory.urls.admin', 'cafe.inventory'), namespace='inventory-admin')),
+    path('admin/order/',
+         include(('order.urls.admin', 'cafe.order'), namespace='order-admin')),
 
 ]
 
@@ -45,7 +47,8 @@ front_urls = [
          include(('menu.urls.front', 'cafe.menu'), namespace='menu-front')),
     path('front/inventory/',
          include(('inventory.urls.front', 'cafe.inventory'), namespace='inventory-front')),
-
+    path('front/order/',
+         include(('order.urls.front', 'cafe.order'), namespace='order-front')),
 ]
 
 doc_patterns = [

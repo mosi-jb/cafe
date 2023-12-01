@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'media',
     'location',
     'menu',
+    'order',
     'inventory',
     'rest_framework',
     'rest_framework.authtoken',
