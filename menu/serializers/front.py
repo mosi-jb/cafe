@@ -1,21 +1,27 @@
 from rest_framework import serializers
 
+from inventory.serializers.front import StockRecordFrontSerializer
 from menu.models import Category, Product, CategoryImage
 
 
-class CategoryFrontSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Category
-        fields = '__all__'
-
-
 class ProductFrontSerializer(serializers.ModelSerializer):
+    stockrecords = StockRecordFrontSerializer(read_only=True, many=True)
+
     class Meta:
         model = Product
         fields = '__all__'
 
 
-class CategoryFrontImageSerializer(serializers.ModelSerializer):
+class CategoryImageFrontSerializer(serializers.ModelSerializer):
     class Meta:
         model = CategoryImage
+        fields = '__all__'
+
+
+class CategoryFrontSerializer(serializers.ModelSerializer):
+    product = ProductFrontSerializer(read_only=True, many=True)
+    picture = CategoryImageFrontSerializer(read_only=True, many=True)
+
+    class Meta:
+        model = Category
         fields = '__all__'

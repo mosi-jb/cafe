@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 
 from location.models import Location, Chair, LocationImage
-from location.serializers.front import LocationFrontSerializer, ChairFrontSerializer, LocationFrontImageSerializer
+from location.serializers.front import LocationFrontSerializer, ChairFrontSerializer, LocationImageFrontSerializer
 
 
 class LocationFrontViewSet(viewsets.ReadOnlyModelViewSet):
@@ -16,4 +16,4 @@ class ChairFrontViewSet(viewsets.ReadOnlyModelViewSet):
 
 class LocationFrontImageViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = LocationImage.objects.all()
-    serializer_class = LocationFrontImageSerializer
+    serializer_class = LocationImageFrontSerializer

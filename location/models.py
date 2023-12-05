@@ -27,7 +27,7 @@ class Location(models.Model):
 
 
 class Chair(models.Model):
-    location = models.ForeignKey(Location, on_delete=models.CASCADE, verbose_name='میز', related_name='loc')
+    location = models.ForeignKey(Location, on_delete=models.CASCADE, verbose_name='میز', related_name='chairs')
     title = models.CharField(max_length=48, verbose_name='عنوان', db_index=True)
     slug = models.SlugField(default="", null=False, db_index=True, blank=True, max_length=200, unique=True,
                             verbose_name='عنوان در url', allow_unicode=True)
