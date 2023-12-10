@@ -5,6 +5,10 @@ from menu.models import Category, Product, CategoryImage
 
 # Register your models here.
 
+class ProductInline(admin.StackedInline):
+    model = Product
+    extra = 2
+
 
 class ImageInline(admin.StackedInline):
     model = CategoryImage
@@ -15,7 +19,7 @@ class ImageInline(admin.StackedInline):
 @admin.register(Category)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('title',)
-    inlines = [ImageInline]
+    inlines = [ImageInline, ProductInline]
 
 
 admin.site.register(CategoryImage)
